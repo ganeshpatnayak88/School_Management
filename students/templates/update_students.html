@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">
+
+Update Student
+
+</h2>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input
+type="text"
+name="name"
+value="{{student.name}}"
+class="form-control mb-3"
+required>
+
+
+<input
+type="number"
+name="roll_no"
+value="{{student.roll_no}}"
+class="form-control mb-3"
+required>
+
+
+<input
+type="number"
+name="age"
+value="{{student.age}}"
+class="form-control mb-3"
+required>
+
+
+<label>Class *</label>
+
+<select
+name="student_class"
+class="form-control mb-3">
+
+<option value="6th"
+{% if student.student_class == "6th" %}
+selected
+{% endif %}
+>
+6th
+</option>
+
+
+<option value="7th"
+{% if student.student_class == "7th" %}
+selected
+{% endif %}
+>
+7th
+</option>
+
+
+<option value="8th"
+{% if student.student_class == "8th" %}
+selected
+{% endif %}
+>
+8th
+</option>
+
+
+<option value="9th"
+{% if student.student_class == "9th" %}
+selected
+{% endif %}
+>
+9th
+</option>
+
+
+<option value="10th"
+{% if student.student_class == "10th" %}
+selected
+{% endif %}
+>
+10th
+</option>
+
+</select>
+
+
+<input
+type="email"
+name="email"
+value="{{student.email}}"
+class="form-control mb-3"
+required>
+
+
+<textarea
+name="address"
+class="form-control mb-3"
+required>{{student.address}}</textarea>
+
+
+<button class="btn btn-success">
+
+Update Student
+
+</button>
+
+</form>
+
+{% endblock %}

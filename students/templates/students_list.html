@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">
+View Students
+</h2>
+
+<form method="GET" class="mb-3">
+
+<div class="input-group">
+
+<input
+type="text"
+name="search"
+placeholder="Search student..."
+class="form-control">
+
+<button class="btn btn-primary">
+
+Search
+
+</button>
+
+</div>
+
+</form>
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Roll</th>
+<th>Age</th>
+<th>Class</th>
+<th>Email</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for s in students %}
+
+<tr>
+
+<td>{{s.id}}</td>
+<td>{{s.name}}</td>
+<td>{{s.roll_no}}</td>
+<td>{{s.age}}</td>
+<td>{{s.student_class}}</td>
+<td>{{s.email}}</td>
+<td>
+
+<a href="/update/{{s.id}}"
+class="btn btn-warning btn-sm">
+
+Edit
+
+</a>
+
+
+<a href="/delete/{{s.id}}"
+class="btn btn-danger btn-sm"
+
+onclick="return confirm(
+'Are you sure you want to delete this student?'
+)">
+
+Delete
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}

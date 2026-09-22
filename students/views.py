@@ -205,7 +205,7 @@ Disallow: /class/
 Disallow: /class-list/
 Disallow: /admin/
 
-Sitemap: http://127.0.0.1:8000/sitemap.xml
+Sitemap: http://98.130.50.72/sitemap.xml     
 """
 
     return HttpResponse(content, content_type="text/plain")

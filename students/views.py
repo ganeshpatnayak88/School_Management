@@ -187,3 +187,25 @@ def class_list(request):
 
         }
     )
+
+
+from django.http import HttpResponse
+
+
+def robots_txt(request):
+    content = """User-agent: *
+Allow: /
+
+Disallow: /dashboard/
+Disallow: /students/
+Disallow: /add/
+Disallow: /update/
+Disallow: /delete/
+Disallow: /class/
+Disallow: /class-list/
+Disallow: /admin/
+
+Sitemap: http://127.0.0.1:8000/sitemap.xml
+"""
+
+    return HttpResponse(content, content_type="text/plain")

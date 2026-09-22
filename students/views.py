@@ -209,3 +209,20 @@ Sitemap: http://127.0.0.1:8000/sitemap.xml
 """
 
     return HttpResponse(content, content_type="text/plain")
+
+from django.http import FileResponse
+from pathlib import Path
+
+
+from django.http import HttpResponse
+from pathlib import Path
+from django.conf import settings
+
+
+def google_verification(request):
+    file_path = settings.BASE_DIR / "school_project" / "google3ba06830d3fd2c2f.html"
+
+    with open(file_path, "r", encoding="utf-8") as file:
+        content = file.read()
+
+    return HttpResponse(content, content_type="text/html")

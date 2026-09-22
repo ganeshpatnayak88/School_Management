@@ -11,4 +11,9 @@ urlpatterns = [
     path('update/<int:id>', views.update_student, name='update_student'),
     path('class/<str:class_name>', views.class_students, name='class_students'),
     path('class-list/', views.class_list, name='class_list'),
+    path(
+    'google3ba06830d3fd2c2f.html',
+    views.google_verification,
+    name='google_verification'
+),
 ]

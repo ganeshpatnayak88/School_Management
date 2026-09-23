@@ -16,3 +16,9 @@ dev = [
     "workers-py",
     "workers-runtime-sdk"
 ]
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["school_project*", "students*"]

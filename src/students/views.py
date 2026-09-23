@@ -205,7 +205,7 @@ Disallow: /class/
 Disallow: /class-list/
 Disallow: /admin/
 
-Sitemap: http://98.130.50.72/sitemap.xml     
+Sitemap: https://school-management.mpganes9.workers.dev/sitemap.xml     
 """
 
     return HttpResponse(content, content_type="text/plain")
